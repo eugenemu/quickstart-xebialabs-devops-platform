@@ -153,10 +153,10 @@ Parameters:
   InstallXLRelease:
     Description: Whether XL Release should be installed in the ECS Cluster.
     Type: String
-    Default: true
+    Default: 'true'
     AllowedValues:
-      - true
-      - false
+      - 'true'
+      - 'false'
   XLReleaseVersion:
     Description: The version of XL Release to deploy
     AllowedPattern: '^[0-9]+\.[0-9+]($|\.[0-9]+$|\.[0-9]+[-+.].+$)'
@@ -168,10 +168,10 @@ Parameters:
   InstallXLDeploy:
     Description: Whether XL Deploy should be installed in the ECS Cluster.
     Type: String
-    Default: true
+    Default: 'true'
     AllowedValues:
-      - true
-      - false
+      - 'true'
+      - 'false'
   AcceptEula:
     Description: Do you accept the XebiaLabs EULA (Allowed value 'yes')
     Type: String
@@ -373,7 +373,6 @@ Resources:
         PublicSubnet2ID: !GetAtt VPCStack.Outputs.PublicSubnet2ID
         QSS3BucketName: !Ref QSS3BucketName
         QSS3BucketRegion: !Ref QSS3BucketRegion
-        BastionInstanceType: t2.small
         BastionAMIOS: Amazon-Linux-HVM
         KeyPairName: !Ref KeyPairName
         QSS3KeyPrefix: !Join 
