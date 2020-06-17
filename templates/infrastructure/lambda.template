@@ -67,7 +67,7 @@ Resources:
                   - s3:PutObject
                   - s3:DeleteObject
                 Resource:
-                  - !Sub 'arn:${AWS::Partition}:s3:::${LambdaZipsBucket}-${AWS::Region}/${QSS3KeyPrefix}*'
+                  - !Sub 'arn:${AWS::Partition}:s3:::${LambdaZipsBucket}/${QSS3KeyPrefix}*'
   CopyZipsFunction:
     Type: AWS::Lambda::Function
     Properties:
